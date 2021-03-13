@@ -18,12 +18,13 @@ void Engine::start()
     Clock clock;
     while (m_window.isOpen())
     {
+        m_window.setFramerateLimit(60); // call it once, after creating the window
         // Перезапускаем таймер и записываем отмеренное время в dt
         Time dt = clock.restart();
         float dtAsSeconds = dt.asSeconds();
         input();
         update(dtAsSeconds);
-        animation();
+        animation(dtAsSeconds);
         draw();
       
     }

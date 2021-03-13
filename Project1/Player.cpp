@@ -65,7 +65,7 @@ void Player::stopDown()
 
 int Player::stop()
 {
-	if (Player::Left_pressed == 0 && Player::Right_pressed == 0 && Player::Up_pressed == 0 && Player::Down_pressed == 0)
+	if (Player::Left_pressed == false && Player::Right_pressed == false && Player::Up_pressed == false && Player::Down_pressed == false)
 		return 1;
 	else
 		return 0;
@@ -73,27 +73,18 @@ int Player::stop()
 
 void Player::update(float elapsedTime)
 {
-
-	//std::cout << Left_pressed<< " " <<  Right_pressed <<" " << Up_pressed << " " <<  Down_pressed << std::endl;
 	if (Right_pressed)
-	{
 		player_position.x += player_speed.x * elapsedTime;
-	}
 
 	if (Left_pressed)
-	{
-		
 		player_position.x -= player_speed.x * elapsedTime;
-	}
+
 	if (Up_pressed)
-	{
 		player_position.y -= player_speed.y * elapsedTime;
-	}
+
 	if (Down_pressed)
-	{
 		player_position.y += player_speed.y * elapsedTime;
-		
-	}
+
 	player_sprite.setPosition(player_position);
 }
 

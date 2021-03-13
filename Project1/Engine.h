@@ -17,7 +17,7 @@ private:
 	void input();
 	void update(float dtAsSeconds);
 	void draw();
-	void animation();
+	void animation(float dtAsSeconds);
 	sf::Event event;
 public:
 	Engine();

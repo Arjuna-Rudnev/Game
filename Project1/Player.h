@@ -5,14 +5,11 @@ using namespace sf;
 class Player
 {
 private:
-	
-
 	Vector2f player_position;
 	bool Left_pressed = false;
 	bool Right_pressed = false;
 	bool Up_pressed = false;
 	bool Down_pressed = false;
-
 public:
 	Sprite player_sprite;
 	Texture player_texture;
@@ -26,7 +23,6 @@ public:
 	void moveRight();
 	void moveUp();
 	void moveDown();
-
 	void stopLeft();
 	void stopRight();
 	void stopUp();
