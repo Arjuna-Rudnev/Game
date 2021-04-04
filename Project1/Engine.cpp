@@ -24,6 +24,7 @@ void Engine::start()
         float dtAsSeconds = dt.asSeconds();
         input();
         update(dtAsSeconds);
+        collision();
         animation(dtAsSeconds);
         draw();
       

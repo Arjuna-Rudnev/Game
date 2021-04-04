@@ -56,4 +56,10 @@ void Engine::input()
         }
         else
             m_player.stopDown();
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift))
+        {
+            m_player.run();
+        }
+        else
+            m_player.stoprun();
 }

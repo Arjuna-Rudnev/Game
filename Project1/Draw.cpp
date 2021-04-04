@@ -8,7 +8,5 @@ void Engine::draw()
 
     m_window.draw(m_BackgroundSprite);
     m_window.draw(m_player.getSprite());
-
-    // Отображаем все, что нарисовали
-    m_window.display();
+    m_window.display();                                                                                           
 }

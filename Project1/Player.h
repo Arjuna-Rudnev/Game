@@ -5,16 +5,17 @@ using namespace sf;
 class Player
 {
 private:
-	Vector2f player_position;
 	bool Left_pressed = false;
 	bool Right_pressed = false;
 	bool Up_pressed = false;
 	bool Down_pressed = false;
+	bool Run_pressed = false;
 public:
 	Sprite player_sprite;
 	Texture player_texture;
 	Texture player_movement1_texture;
 	Texture player_movement2_texture;
+	Vector2f player_position;
 	Vector2f player_speed;
 	Player();
 	Sprite getSprite();
@@ -27,6 +28,8 @@ public:
 	void stopRight();
 	void stopUp();
 	void stopDown();
+	void run();
+	void stoprun();
 	int stop();
 	void update(float elapsedTime);
 };

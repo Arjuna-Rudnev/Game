@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "wall.h"
 using namespace sf;
 
 class Engine
@@ -13,11 +14,11 @@ private:
 
 	//Instance player
 	Player m_player;
-
 	void input();
 	void update(float dtAsSeconds);
-	void draw();
+	void collision();
 	void animation(float dtAsSeconds);
+	void draw();
 	sf::Event event;
 public:
 	Engine();

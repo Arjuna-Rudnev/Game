@@ -27,7 +27,6 @@ void Engine::animation(float dtAsSeconds)
 		else
 			if ((m_player.animation_number != 2) && (movement_animation_timeAsSecond < Animation_timer))
 			{
-				std::cout << "texture set 2" << std::endl;
 				m_player.player_sprite.setTexture(m_player.player_movement2_texture);
 				m_player.animation_number = 2;
 				Animation_timer = 0;

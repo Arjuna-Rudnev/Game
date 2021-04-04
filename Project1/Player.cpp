@@ -43,6 +43,10 @@ void Player::moveDown()
 	Down_pressed = true;
 }
 
+void Player::run()
+{
+	Run_pressed = true;
+}
 void Player::stopLeft()
 {
 	Left_pressed = false;
@@ -62,7 +66,10 @@ void Player::stopDown()
 {
 	Down_pressed = false;
 }
-
+void Player::stoprun()
+{
+	Run_pressed = false;
+}
 int Player::stop()
 {
 	if (Player::Left_pressed == false && Player::Right_pressed == false && Player::Up_pressed == false && Player::Down_pressed == false)
@@ -78,13 +85,23 @@ void Player::update(float elapsedTime)
 
 	if (Left_pressed)
 		player_position.x -= player_speed.x * elapsedTime;
-
 	if (Up_pressed)
 		player_position.y -= player_speed.y * elapsedTime;
 
 	if (Down_pressed)
 		player_position.y += player_speed.y * elapsedTime;
 
+	if (Right_pressed && Run_pressed)
+		player_position.x += player_speed.x * elapsedTime * 2;
+
+	if (Left_pressed && Run_pressed)
+		player_position.x -= player_speed.x * elapsedTime * 2;
+
+	if (Up_pressed && Run_pressed)
+		player_position.y -= player_speed.y * elapsedTime * 2;
+
+	if (Down_pressed && Run_pressed)
+		player_position.y += player_speed.y * elapsedTime * 2;
 	player_sprite.setPosition(player_position);
 }
 
