@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "Player.h"
+#include "Object.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
 void Engine::input()
@@ -7,7 +8,12 @@ void Engine::input()
     // Escape
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
         m_window.close();
-
+    //inventory
+   // sf::Event event;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Tab) == true )
+    {
+        inventory_is_open += 1;
+    }
     // movement
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
     {
@@ -62,4 +68,12 @@ void Engine::input()
         }
         else
             m_player.stoprun();
+        //interaction
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::F))
+        {
+            if(m_player.distance(Objects.Apple1) <= 200)
+                m_player.add_item_to_inventory(Objects.Apple1);
+            if (m_player.distance(Objects.Apple2) <= 200)
+                m_player.add_item_to_inventory(Objects.Apple2);
+        }
 }
