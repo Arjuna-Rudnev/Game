@@ -16,6 +16,7 @@ void Engine::start()
 {
    // Timing
     Clock clock;
+    m_map.read("gnd.txt");
     while (m_window.isOpen())
     {
         m_window.setFramerateLimit(60); 
@@ -27,6 +28,7 @@ void Engine::start()
         collision();
         animation(dtAsSeconds);
         draw();
+
       
     }
 }
