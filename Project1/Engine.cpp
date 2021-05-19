@@ -16,7 +16,15 @@ void Engine::start()
 {
    // Timing
     Clock clock;
-    m_map.read("gnd.txt");
+    ground.read("gnd.txt");
+    grass.read("grass.txt");
+    farm.read("farm.txt");
+    farm_up.read("farm_up");
+    water.read("water.txt");
+    water_grass.read("water_grass.txt");
+    building.read("building.txt");
+    building_up.read("building_up");
+    tree.read("tree.txt");
     while (m_window.isOpen())
     {
         m_window.setFramerateLimit(60); 

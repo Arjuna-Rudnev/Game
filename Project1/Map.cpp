@@ -8,16 +8,17 @@ void Map::read(std::string path_to_file)
 {
     int i = 0;
     ifstream inFile;
-    inFile.open("gnd.txt");
+    inFile.open(path_to_file);
     if(inFile)
     {
-        for (int j = 0; j < 50; j++)
+        cout << "File " << path_to_file << " opened\n";
+        for (int j = 0; j < 10; j++)
         {
             for (int i = 0; i < 60; i++)
             {
                 string number;
                 getline(inFile, number, ',');
-                if (i < 50 && j < 50)
+                if (i < 10 && j < 10)
                     tile_array[i][j].add_number(std::stoi(number));
             }
         }  
@@ -30,11 +31,11 @@ void Map::read(std::string path_to_file)
     Grass_pipo.loadFromFile("[A]Grass_pipo.png");
     Water_pipo.loadFromFile("[A]Water_pipo.png");
     Flower_pipo.loadFromFile("[A]Flower_pipo.png");
-    for (int j = 0; j < 50; j++)
+    for (int j = 0; j < 10; j++)
     {
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 10; i++)
         {
-                        if (tile_array[i][j].sprite_number < 577)
+                        if (tile_array[i][j].sprite_number < 577 && tile_array[i][j].sprite_number > 0)
             {
                 tile_array[i][j].sprite.setTexture(WaterFall_pipo);
                 tile_array[i][j].sprite.setTextureRect(sf::IntRect((tile_array[i][j].sprite_number - 1) % 32 * 32,
@@ -42,28 +43,28 @@ void Map::read(std::string path_to_file)
                 tile_array[i][j].sprite.setPosition(i * 32, j * 32);
             }
             else
-                if (tile_array[i][j].sprite_number < 1641)
+                if (tile_array[i][j].sprite_number < 1641 && tile_array[i][j].sprite_number > 0)
                 {
                     tile_array[i][j].sprite.setTexture(BaseChip_pipo);
                     tile_array[i][j].sprite.setTextureRect(sf::IntRect(
                         (tile_array[i][j].sprite_number - 577) % 8 * 32, (tile_array[i][j].sprite_number - 577) / 8 * 32, 32, 32));
                     tile_array[i][j].sprite.setPosition(i * 32, j * 32);
                 }
-                else if (tile_array[i][j].sprite_number < 2169)
+                else if (tile_array[i][j].sprite_number < 2169 && tile_array[i][j].sprite_number > 0)
                 {
                     tile_array[i][j].sprite.setTexture(Grass_pipo);
                     tile_array[i][j].sprite.setTextureRect(sf::IntRect(
                         (tile_array[i][j].sprite_number - 1641) % 8 * 32, (tile_array[i][j].sprite_number - 1641) / 8 * 32, 32, 32));
                     tile_array[i][j].sprite.setPosition(i * 32, j * 32);
                 }
-                else  if (tile_array[i][j].sprite_number < 5241)
+                else  if (tile_array[i][j].sprite_number < 5241 && tile_array[i][j].sprite_number > 0)
                 {
                     tile_array[i][j].sprite.setTexture(Water_pipo);
                     tile_array[i][j].sprite.setTextureRect(sf::IntRect(
                         (tile_array[i][j].sprite_number - 2169) % 8 * 32, (tile_array[i][j].sprite_number - 2169) / 8 * 32, 32, 32));
                     tile_array[i][j].sprite.setPosition(i * 32, j * 32);
                 }
-                else
+                else if(tile_array[i][j].sprite_number > 0)
                 {
                     tile_array[i][j].sprite.setTexture(Flower_pipo);
                     tile_array[i][j].sprite.setTextureRect(sf::IntRect((tile_array[i][j].sprite_number - 5241) % 8 * 32, (tile_array[i][j].sprite_number - 5241) / 8 * 32, 32, 32));

@@ -9,13 +9,69 @@ void Engine::draw()
     if ((inventory_is_open/4) % 2 == 0)
     {
         
-           for (int j = 0; j <50; j++)
+           for (int j = 0; j <10; j++)
             {
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    m_window.draw(m_map.tile_array[i][j].sprite);
+                    m_window.draw(ground.tile_array[i][j].sprite);
                 }
             }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(grass.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(farm.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(farm_up.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(water.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(water_grass.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(building.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(building_up.tile_array[i][j].sprite);
+               }
+           }
+           for (int j = 0; j < 10; j++)
+           {
+               for (int i = 0; i < 10; i++)
+               {
+                   m_window.draw(tree.tile_array[i][j].sprite);
+               }
+           }
         m_window.draw(m_player.getSprite());
         /*
          m_window.draw(m_BackgroundSprite);

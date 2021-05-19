@@ -19,7 +19,15 @@ public:
 	All_Objects Objects;
 	Vector2f inventory;
 	Cursor m_cursor;
-	Map m_map;
+	Map ground;
+	Map grass;
+	Map farm;
+	Map farm_up;
+	Map water;
+	Map water_grass;
+	Map building;
+	Map building_up;
+	Map tree;
 	int inventory_is_open = 0;
 	
 	void input();

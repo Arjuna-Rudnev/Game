@@ -22,6 +22,6 @@ public:
 	Texture Grass_pipo;
 	Texture Water_pipo;
 	Texture Flower_pipo;
-	Tile tile_array[50][50];
+	Tile tile_array[10][10];
 	void read(std::string path_to_file);
 };
